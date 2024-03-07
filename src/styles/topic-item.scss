@@ -1,0 +1,37 @@
+.topic-item {
+    width: 80%;
+
+    .list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+
+        .program-item {
+            border-left: 2px solid $primary-color;
+            box-shadow: 2px 2px 8px gray;
+            width: 100%;
+            height: 450px;
+            padding: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+
+           .desc{
+                color: $primary-color;
+                // font-weight: bold;
+            }
+
+            .foot {
+                display: flex;
+                justify-content: flex-end;
+                justify-self: flex-start;
+                gap: 10px;
+                padding-right: 10px;
+                border: 1px solid red;
+            }
+        }
+    }
+}
