@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 
 const TopicSearch = ({ handleSearch }) => {
 
+  //Function to handle search form submission
     const handleSubmit = (e) => {
         e.preventDefault();
         const val = e.target.children[1].value;

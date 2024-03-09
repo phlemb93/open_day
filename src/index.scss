@@ -1,15 +1,12 @@
-@import 'variables';
-
-@import './styles/home';
-@import './styles/navbar';
-@import './styles/topics-list';
-@import './styles/topic-item';
-@import './styles/topic-search';
-
 * {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: normal;
+
+}
+body {
+    margin: 0;
+    padding: 0;
 }
 
 .App {
@@ -20,3 +17,15 @@
     justify-content: center;
     align-items: center;
 }
+
+
+
+$primary-color: #B22737;
+
+@import './styles/home';
+@import './styles/navbar';
+@import './styles/topics-list';
+@import './styles/topic-item';
+@import './styles/topic-search';
+@import './styles/loading-skeleton';
+

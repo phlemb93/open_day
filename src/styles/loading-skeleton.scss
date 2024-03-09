@@ -1,0 +1,112 @@
+.skeleton {
+    max-width: 1200px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    .search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 5px;
+
+        div {
+            margin-bottom: 40px;
+            width: 200px;
+            height: 40px;
+            border-radius: 2px;
+            animation: loading 1s linear infinite alternate;
+
+            &:nth-child(2){
+                width: 100px;
+            }
+        }
+    }
+
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        
+        div {
+            margin-bottom: 10px;
+            width: 200px;
+            height: 25px;
+            border-radius: 2px;
+            animation: loading 1s linear infinite alternate;
+        }
+    }
+
+    .items-skeleton {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 10px;
+        width: 100%;
+
+        .item {
+            width: 100%;
+            max-width: 450px;
+            height: 410px;
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            border: 1px solid rgba(128, 128, 128, 0.258);
+
+
+            .img {
+                margin-bottom: 40px;
+                width: 100%;
+                height: 200px;
+                animation: loading 1s linear infinite alternate;
+
+            }
+            .title {
+                margin-bottom: 10px;
+                width: 200px;
+                height: 20px;
+                border-radius: 5px;
+                animation: loading 1s linear infinite alternate;
+            }
+            .btn {
+                width: 150px;
+                height: 40px;
+                border-radius: 5px;
+                animation: loading 1s linear infinite alternate;
+            }
+        }
+    }
+}
+
+@keyframes loading {
+    0% { background-color: rgba(128, 128, 128, 0.4)  }
+    100% { background-color: rgba(128, 128, 128, 0.1)   }
+}
+
+@media screen and (min-width: 820px){
+    .skeleton {
+        .search {
+            justify-content: flex-start;
+        }
+        .items-skeleton {
+            grid-template-columns: 1fr 1fr;
+
+            .item {
+                // width: 300px;
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .skeleton {
+        .items-skeleton {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}

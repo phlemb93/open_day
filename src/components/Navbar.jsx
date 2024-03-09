@@ -6,13 +6,16 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
+  //Redirect back to homepage and reload the page
   const handleClick = () => {
       navigate('/');
+      location.reload();
   }
+
   return (
     <header>
         <nav>
-          <img src={logo} alt="" width={50} height={50} onClick={handleClick}/>
+          <img src={logo} alt="cardiff-university-logo" width={50} height={50} onClick={handleClick}/>
         </nav>
     </header>
   )

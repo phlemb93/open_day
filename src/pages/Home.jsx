@@ -2,7 +2,9 @@ import axios from "axios";
 import TopicSearch from "../components/TopicSearch";
 import TopicsList from "../components/TopicsList";
 import { useEffect, useState } from "react";
-import Loading from "../components/Loading";
+import LoadingSkeleton from "../components/LoadingSkeleton";
+import { MdError } from "react-icons/md";
+
 
 const Home = () => {
 
@@ -12,7 +14,7 @@ const Home = () => {
 
     const [value, setValue] = useState('');
 
-
+    //Fetching data
     useEffect(() => {
         const fetchRequest = async function(){
             try {
@@ -34,31 +36,39 @@ const Home = () => {
 
     }, [])
 
+    //Function to set the search value
     const handleSearch = (val) => {
         setValue(val);
     }
 
   return (
     <main className="home">
-
-        {
-            !isLoading ?
+        { !isLoading ?
             <>
                 <section className="topic-search">
                     <TopicSearch handleSearch={handleSearch} />
                 </section>
-                <section>
-                    <h1>Open-Day Topics</h1>
-                </section>
-                <section className="topics-list">
-                    <TopicsList topics={topics} value={value} />
-                </section>
-            </> : <Loading />
+                
+                { !error ?
+                    <>
+                        <section>
+                            <h1>Open-Day Topics</h1>
+                        </section>
+                        <section className="topics-list">
+                            <TopicsList topics={topics} value={value} />
+                        </section>
+                    </>
+                    : 
+                    <section className="error">
+                        <div>
+                            <MdError style={{fontSize:30, color:'#B22737'}}/>
+                            <h2>Oooooops!</h2>
+                        </div>
+                        <p>An error occurred...</p>
+                    </section> 
+                }
+            </> :  <LoadingSkeleton />
         }
-
-
-
-        
     </main>
   )
 }

@@ -10,11 +10,11 @@ function App() {
     <div className='App'>
       <Navbar />
       <Routes>
-          <Route index element={ <Home /> } />
-          <Route path="topics/:id" element={ <TopicItem /> } />
-        </Routes>
+        <Route index element={ <Home /> } />
+        <Route path="topics/:id" element={ <TopicItem /> } />
+      </Routes>
     </div>
   )
 }
 
-export default App
+export default App;
